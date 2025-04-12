@@ -28,6 +28,7 @@ android {
     }
     buildFeatures {
         viewBinding=true
+        dataBinding = false
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
@@ -53,5 +54,7 @@ dependencies {
 
 
     implementation (libs.vlc)
+
+
 
 }

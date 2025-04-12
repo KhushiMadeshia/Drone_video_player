@@ -6,12 +6,32 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
+
     <org.videolan.libvlc.media.VideoView
         android:id="@+id/videoView"
-        android:layout_width="395dp"
-        android:layout_height="467dp"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/recordButton"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <EditText
+        android:id="@+id/rtspInput"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="28dp"
+        android:layout_marginRight="8dp"
+        android:ems="10"
+        android:hint="Enter rtspUrl"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -19,31 +39,53 @@
         android:id="@+id/button_stream"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
         android:text="Play Stream"
         app:layout_constraintBottom_toTopOf="@+id/videoView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <EditText
-        android:id="@+id/rtspInput"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:hint="Enter rtspUrl"
-        android:inputType="text"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/rtspInput"
+        app:layout_constraintVertical_bias="0.223" />
 
     <Button
         android:id="@+id/recordButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="51dp"
+        android:layout_margin="8dp"
+        android:layout_marginTop="4dp"
+        android:gravity="center"
         android:text="Start Recording"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button_stream" />
+
+    <Button
+        android:id="@+id/pipButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:text="  Pop Out "
         app:layout_constraintBottom_toTopOf="@+id/videoView"
-        app:layout_constraintStart_toEndOf="@+id/button_stream"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rtspInput"
+        app:layout_constraintVertical_bias="0.219" />
+
+    <TextView
+        android:id="@+id/recordingTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="00:00"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#FF0000"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@+id/videoView"
+        app:layout_constraintEnd_toEndOf="@+id/videoView"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
